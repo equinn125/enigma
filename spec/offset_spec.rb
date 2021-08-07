@@ -12,4 +12,11 @@ RSpec.describe Offset do
       expect(given_offset).to be_a(Offset)
       expect(given_offset.date).to eq("040895")
     end
+
+    describe '#square_date(date)' do
+      it 'squares a given date' do
+        given_offset = Offset.new("040895")
+        expect(given_offset.square_date("40895")).to eq(1672401025)
+      end
+    end
 end
