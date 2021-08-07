@@ -9,23 +9,26 @@ class Offset
     end
   end
 
-  def last_4_square_date(date)
-     (date.to_i**2).to_s[-4..-1]
+  def last_4_square_date
+    (@date.to_i**2).to_s[-4..-1]
   end
 
-  def offset_a
-    last_4_square_date(date)[0]
+  def set_offset_shift
+    last_4_square_date.split(//)
   end
-
-  def offset_b
-    last_4_square_date(date)[1]
-  end
-
-  def offset_c
-    last_4_square_date(date)[2]
-  end
-
-  def offset_d
-    last_4_square_date(date)[3]
-  end
+  # def offset_a
+  #   last_4_square_date(date)[0]
+  # end
+  #
+  # def offset_b
+  #   last_4_square_date(date)[1]
+  # end
+  #
+  # def offset_c
+  #   last_4_square_date(date)[2]
+  # end
+  #
+  # def offset_d
+  #   last_4_square_date(date)[3]
+  # end
 end
