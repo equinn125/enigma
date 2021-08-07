@@ -9,8 +9,8 @@ class Offset
     end
   end
 
-  def square_date
-     date_int = @date.to_i
-     date_int ** 2
+  def last_4_square_date
+    square = (@date.to_i**2)
+    square.to_s[-4..-1]
   end
 end

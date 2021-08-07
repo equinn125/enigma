@@ -13,15 +13,15 @@ RSpec.describe Offset do
       expect(given_offset.date).to eq("040895")
     end
 
-    describe '#square_date' do
+    describe '#last_4_square_date' do
       it 'squares a given date' do
         given_offset = Offset.new("040895")
-        expect(given_offset.square_date).to eq(1672401025)
+        expect(given_offset.last_4_square_date).to eq("1025")
       end
 
       it 'squares todays generated date' do
         today_offset = Offset.new()
-        expect(today_offset.square_date).to eq(5015614041)
+        expect(today_offset.last_4_square_date).to eq("4041")
       end
     end
 end
