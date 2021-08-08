@@ -23,4 +23,11 @@ RSpec.describe Encryption do
       expect(encryption.full_shift).to eq(expected)
     end
   end
+
+  describe '#encrypt(message)' do
+    it 'can return a encrypted message' do
+      encryption = Encryption.new("hello world", "02715", "040895")
+      expect(encryption.encrypt("hello world")).to eq("keder ohulw")
+    end
+  end
 end
