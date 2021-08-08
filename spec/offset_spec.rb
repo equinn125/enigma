@@ -4,7 +4,7 @@ RSpec.describe Offset do
   it 'exists with todays date' do
     today_offset = Offset.new()
     expect(today_offset).to be_a(Offset)
-    expect(today_offset.date).to eq('070821')
+    expect(today_offset.date).to eq(Date.today.strftime("%d%m%y"))
     end
 
     it 'exists with a date passed through' do

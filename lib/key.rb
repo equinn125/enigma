@@ -8,7 +8,7 @@ class Key
     end
   end
 
-  def set_shift_key
+  def set_shift_key #def refactor here to use an enumerable instead 
     a_key = @key[0..1]
     b_key = @key[1..2]
     c_key = @key[2..3]
