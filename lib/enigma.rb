@@ -12,9 +12,6 @@ class Enigma
 
   def decrypt(message, key = nil, date = nil)
     new = Decryption.new(message, key, date)
-    {decryption: new.decrypt(message),
-      key: Key.new(key).key,
-      date: Offset.new(date).date
-    }
+    new.run
   end
 end
