@@ -13,7 +13,7 @@ class Offset
     (@date.to_i**2).to_s[-4..-1]
   end
 
-  def set_offset_shift
+  def set_offset_shift #refactor here to use an enumerable
     last_4_square_date.split(//)
   end
   # def offset_a
