@@ -1,3 +1,5 @@
+require_relative 'encryption'
+require_relative 'decryption'
 class Enigma
   def initialize
   end
@@ -5,10 +7,7 @@ class Enigma
 
   def encrypt(message, key = nil, date= nil) #potentially change this to reduce redundancy
   new =  Encryption.new(message, key, date)
-  {encryption: new.encrypt(message),
-    key: Key.new(key).key,
-    date: Offset.new(date).date
-  }
+  new.run
   end
 
   def decrypt(message, key = nil, date = nil)

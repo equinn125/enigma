@@ -1,3 +1,5 @@
+require_relative 'key'
+require_relative 'offset'
 class Encryption
   attr_reader :message, :key, :offset, :alpha
   def initialize(message, key, date)
@@ -5,6 +7,12 @@ class Encryption
     @key = Key.new(key)
     @offset= Offset.new(date)
     @alpha = ("a".."z").to_a << " "
+  end
+
+  def run
+    full_shift
+    encrypt(message)
+    recipt_hash
   end
 
   def full_shift
@@ -29,4 +37,12 @@ class Encryption
     end
     encrypted_message.join
   end
+
+  def recipt_hash
+    {encryption: encrypt(message),
+      key: key.key,
+      date: offset.date
+    }
+  end
+
 end
