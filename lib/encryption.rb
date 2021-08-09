@@ -10,7 +10,6 @@ class Encryption
   end
 
   def run
-    full_shift
     encrypt(message)
     recipt_hash
   end

@@ -9,8 +9,7 @@ class Decryption
     @alpha = ("a".."z").to_a << " "
   end
 
-  def run
-    full_shift
+  def run_decrypt
     decrypt(message)
     recipt_hash
   end

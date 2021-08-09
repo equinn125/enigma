@@ -6,12 +6,12 @@ class Enigma
   #figure out where to handle  uppercase and additonal symbol edgecases
 
   def encrypt(message, key = nil, date= nil) #potentially change this to reduce redundancy
-  new =  Encryption.new(message, key, date)
-  new.run
+  encrypt =  Encryption.new(message, key, date)
+  encrypt.run
   end
 
-  def decrypt(message, key = nil, date = nil)
-    new = Decryption.new(message, key, date)
-    new.run
+  def decrypt(message, key, date= nil)
+    decrypt = Decryption.new(message, key, date)
+    decrypt.run_decrypt
   end
 end

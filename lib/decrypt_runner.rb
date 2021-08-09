@@ -1,9 +1,9 @@
 require_relative 'enigma'
-file = File.open('message.txt',"r")
-message = file.read
+file = File.open(ARGV[0],"r")
+encrypted = file.read
 file.close
 enigma = Enigma.new
-result = enigma.decrypt(message)
-creator = File.open("decrypted.txt","w")
-creator.write(result[:decryption])
-puts "Created '#{'decrypted.txt'}' with the key #{result[:key]} and date #{result[:date]}"
+decrypted = enigma.decrypt(encrypted, ARGV[2], ARGV[3])
+creator = File.open(ARGV[1],"w")
+creator.write(decrypted[:decryption])
+puts "Created '#{ARGV[1]}' with the key #{decrypted[:key]} and date #{decrypted[:date]}"
