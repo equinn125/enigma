@@ -1,3 +1,4 @@
+require_relative 'spec_helper'
 require './lib/key'
 
 RSpec.describe Key do

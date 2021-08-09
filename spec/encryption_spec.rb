@@ -1,5 +1,6 @@
-require './lib/key'
-require './lib/offset'
+require_relative 'spec_helper'
+# require './lib/key'
+# require './lib/offset'
 require './lib/encryption'
 
 RSpec.describe Encryption do
