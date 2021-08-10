@@ -27,35 +27,9 @@ RSpec.describe Offset do
     end
 
     describe '#set_offset_shift' do
-      it 'returns an array of the offset shifts' do
+      it 'returns an array of the offset shifts as an interger' do
         given_offset = Offset.new("040895")
-        expect(given_offset.set_offset_shift).to eq(["1", "0", "2", "5"])
+        expect(given_offset.set_offset_shift).to eq([1, 0, 2, 5])
       end
     end
 end
-# describe '#offset_a' do
-#   it 'returns the a offset' do
-#     given_offset = Offset.new("040895")
-#     expect(given_offset.offset_a).to eq("1")
-#   end
-# end
-# describe '#offset_b' do
-#   it 'returns the a offset' do
-#     given_offset = Offset.new("040895")
-#     expect(given_offset.offset_b).to eq("0")
-#   end
-# end
-#
-# describe '#offset_c' do
-#   it 'returns the a offset' do
-#     given_offset = Offset.new("040895")
-#     expect(given_offset.offset_c).to eq("2")
-#   end
-# end
-#
-# describe '#offset_d' do
-#   it 'returns the a offset' do
-#     given_offset = Offset.new("040895")
-#     expect(given_offset.offset_d).to eq("5")
-#   end
-# end

@@ -3,9 +3,8 @@ require_relative 'decryption'
 class Enigma
   def initialize
   end
-  #figure out where to handle  uppercase and additonal symbol edgecases
 
-  def encrypt(message, key = nil, date= nil) #potentially change this to reduce redundancy
+  def encrypt(message, key = nil, date= nil)
   encrypt =  Encryption.new(message, key, date)
   encrypt.run
   end

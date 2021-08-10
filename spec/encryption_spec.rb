@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
-# require './lib/key'
-# require './lib/offset'
+require './lib/key'
+require './lib/offset'
 require './lib/encryption'
 
 RSpec.describe Encryption do
@@ -10,6 +10,7 @@ RSpec.describe Encryption do
     expect(encryption.message).to eq("hello world")
     expect(encryption.key.class).to eq(Key)
     expect(encryption.offset.class).to eq(Offset)
+    expect(encryption.alpha.length).to eq(27)
   end
 
   describe '#full_shift' do
@@ -22,6 +23,7 @@ RSpec.describe Encryption do
         :d => 20
       }
       expect(encryption.full_shift).to eq(expected)
+      expect(encryption.full_shift.class).to eq(Hash)
     end
   end
 
