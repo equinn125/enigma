@@ -32,5 +32,15 @@ RSpec.describe Encryption do
       encryption = Encryption.new("hello world", "02715", "040895")
       expect(encryption.encrypt("hello world")).to eq("keder ohulw")
     end
+
+    it 'can handle uppercase letters' do
+      encryption = Encryption.new("Hello world", "02715", "040895")
+      expect(encryption.encrypt("HELLO WORLD")).to eq("keder ohulw")
+    end
+
+    it 'can encrypt around special characters' do
+      encryption = Encryption.new("Hello World!!", "02715", "040895")
+      expect(encryption.encrypt("hello world!!")).to eq("keder ohulw!!")
+    end
   end
 end

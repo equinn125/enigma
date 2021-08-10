@@ -30,6 +30,8 @@ class Decryption
       if alpha.include?(letter)
         i_a = (id - full_shift.values[i % 4]) % 27
         decrypted_message << alpha[i_a]
+      else
+        decrypted_message << letter
       end
     end
     decrypted_message.join

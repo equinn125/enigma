@@ -31,5 +31,10 @@ RSpec.describe Decryption do
       decryption = Decryption.new("keder ohulw", "02715", "040895")
       expect(decryption.decrypt("keder ohulw")).to eq("hello world")
     end
+
+    it 'can decrypt without changing special characters' do
+      decryption = Decryption.new("keder ohulw!!", "02715", "040895")
+      expect(decryption.decrypt("keder ohulw!!")).to eq("hello world!!")
+    end
   end
 end

@@ -3,7 +3,7 @@ require_relative 'offset'
 class Encryption
   attr_reader :message, :key, :offset, :alpha
   def initialize(message, key, date)
-    @message = message.downcase
+    @message = message
     @key = Key.new(key)
     @offset= Offset.new(date)
     @alpha = ("a".."z").to_a << " "
@@ -24,12 +24,15 @@ class Encryption
   end
 
   def encrypt(message)
+    downcase = message.downcase
     encrypted_message = []
-    message.each_char.with_index do |letter, i|
+    downcase.each_char.with_index do |letter, i|
       id = alpha.index(letter)
       if alpha.include?(letter)
         i_a = (id +full_shift.values[i % 4]) % 27
         encrypted_message << alpha[i_a]
+      else
+        encrypted_message << letter
       end
     end
     encrypted_message.join
