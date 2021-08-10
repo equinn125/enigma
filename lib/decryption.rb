@@ -25,10 +25,10 @@ class Decryption
 
   def decrypt(message)
   decrypted_message = []
-    message.each_char.with_index do |letter, i|
+    message.each_char.with_index do |letter, index|
       id = alpha.index(letter)
       if alpha.include?(letter)
-        i_a = (id - full_shift.values[i % 4]) % 27
+        i_a = (id - full_shift.values[index % 4]) % alpha.length
         decrypted_message << alpha[i_a]
       else
         decrypted_message << letter
@@ -38,7 +38,8 @@ class Decryption
   end
 
   def recipt_hash
-    {decryption: decrypt(message),
+    {
+      decryption: decrypt(message),
       key: key.key,
       date: offset.date
     }

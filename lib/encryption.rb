@@ -26,10 +26,10 @@ class Encryption
   def encrypt(message)
     downcase = message.downcase
     encrypted_message = []
-    downcase.each_char.with_index do |letter, i|
+    downcase.each_char.with_index do |letter, index|
       id = alpha.index(letter)
       if alpha.include?(letter)
-        i_a = (id +full_shift.values[i % 4]) % 27
+        i_a = (id +full_shift.values[index % 4]) % alpha.length
         encrypted_message << alpha[i_a]
       else
         encrypted_message << letter
@@ -39,7 +39,8 @@ class Encryption
   end
 
   def recipt_hash
-    {encryption: encrypt(message),
+    {
+      encryption: encrypt(message),
       key: key.key,
       date: offset.date
     }
