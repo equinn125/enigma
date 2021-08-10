@@ -9,10 +9,12 @@ RSpec.describe Key do
   end
 
   it 'exists with a random key if one is not provided' do
-    generated_key = Key.new()
-    expect(generated_key).to be_a(Key)
-    expect(generated_key.key.length).to eq(5)
-    expect(generated_key.key.class).to eq(String)
+    generated_key1 = Key.new()
+    generated_key2 = Key.new()
+    expect(generated_key1).to be_a(Key)
+    expect(generated_key1.key.length).to eq(5)
+    expect(generated_key1.key.class).to eq(String)
+    expect(generated_key2.key).not_to eq(generated_key1.key)
   end
 
   describe '#set_shift_key' do
